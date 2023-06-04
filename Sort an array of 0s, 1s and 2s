@@ -1,0 +1,45 @@
+class Solution
+{ 
+    int i,A0=0,A1=0,A2=0,temp,count1,count2;
+    public:
+    void sort012(int a[], int n)
+    {
+        for(i=0;i<n;i++)
+        {
+            if(a[i]==0)
+            {
+                A0++;
+            }
+            if(a[i]==1)
+            {
+                A1++;
+            }
+            if(a[i]==2)
+            {
+                A2++;
+            }
+        }
+        temp=0;
+        count1=A0+A1;
+        count2=count1+A2;
+        while(temp<=count2)
+        {
+            if(temp<A0)
+            {
+                a[temp]=0;
+            }
+            if(temp>=A0 && temp<count1)
+            {
+                a[temp]=1;
+            }
+            if(temp>=count1 && temp<count2)
+            {
+                a[temp]=2;
+            }
+            temp++;
+        }
+        
+    }
+    
+    
+};
